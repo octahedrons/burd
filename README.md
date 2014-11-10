@@ -22,16 +22,12 @@ You can use it exactly as any other guillotine app:
 
     git clone git://github.com/mrtazz/katana.git
     cd katana
-    heroku create
+    heroku apps:create
     heroku addons:add redistogo
     heroku domains:add sho.rt
     git push heroku master
-    # for gauges support
-    heroku config:add GAUGES_TOKEN="token"
-    heroku config:add GAUGES_GAUGE="gauge"
-    # for authentication
-    heroku config:add HTTP_USER="theuser"
-    heroku config:add HTTP_PASS="thepass"
+    heroku config:set HTTP_USER="theuser"
+    heroku config:set HTTP_PASS="thepass"
 
 ### Tweetbot
 There is a custom endpoint which is compatible with how tweetbot expects custom
