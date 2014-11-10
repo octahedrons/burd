@@ -31,7 +31,7 @@ module Katana
           status, head, body = settings.service.create(params[:url], params[:code])
 
           if loc = head['Location']
-            "#{File.join("http://", request.host, loc)}"
+            "#{File.join(request.scheme, request.host, loc)}"
           else
             500
           end
