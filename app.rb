@@ -28,6 +28,7 @@ module Katana
       if ENV['TWEETBOT_API']
         # experimental (unauthenticated) API endpoint for tweetbot
         get '/api/create/?' do
+          params[:code] = nil if params[:code] == ""
           status, head, body = settings.service.create(params[:url], params[:code])
 
           if loc = head['Location']
