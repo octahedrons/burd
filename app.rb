@@ -17,6 +17,7 @@ module Katana
       # authenticate everything except GETs
       before do
         unless request.request_method == "GET"
+          params[:code] = nil if params[:code] == ""
           protected!
         end
       end
