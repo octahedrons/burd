@@ -10,6 +10,7 @@ module Katana
       else
         REDIS = Redis.new
       end
+      adapter = Guillotine::RedisAdapter.new REDIS
       set :service => Guillotine::Service.new(adapter, :strip_query => false,
                                               :strip_anchor => false)
 
