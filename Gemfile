@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "2.1.4"
+File.read(".ruby-version").chomp
 
 gem "guillotine", "1.4.0"
 gem "redis"
