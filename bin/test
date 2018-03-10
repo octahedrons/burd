@@ -3,6 +3,9 @@
 # echo commands
 set -x
 
+# install app dependencies
+bundle
+
 # start app and wait for it
 foreman start --env=.env.test &
 sleep 3
