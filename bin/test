@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# echo commands
+set -x
+
+# start app and wait for it
+foreman start --env=.env.test &
+sleep 3
+
+# run the test and save the result
+curl --request POST \
+     --user test:test --include \
+     --form "url=https://www.google.com/"  \
+     --form "code=foobar" \
+     http://localhost:5000 \
+&& \
+curl --silent --include http://localhost:5000/foobar | grep 'Location: https://www.google.com/'
+test_result=$?
+
+# stop app
+kill $!
+wait $!
+
+exit $test_result
