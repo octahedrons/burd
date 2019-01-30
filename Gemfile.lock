@@ -13,7 +13,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     public_suffix (3.0.2)
     puma (3.11.3)
-    rack (1.6.9)
+    rack (1.6.11)
     rack-protection (1.5.5)
       rack
     redis (4.0.1)
