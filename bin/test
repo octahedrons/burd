@@ -6,6 +6,9 @@ set -x
 # install app dependencies
 bundle
 
+# install foreman if not installed
+command -v foreman >/dev/null 2>&1 || gem install --no-document foreman
+
 # start app and wait for it
 foreman start --env=.env.test &
 sleep 3
