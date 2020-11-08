@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/dentarg/guillotine.git
-  revision: bc5da86ec42d304dc0f1e3352e8b86f588a5200c
+  revision: ebb95bf56e25f901239cff517eaaa856a0daebb7
   specs:
     guillotine (1.4.2)
       addressable (~> 2.3)
@@ -14,18 +14,18 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.4)
-    public_suffix (4.0.5)
+    public_suffix (4.0.6)
     puma (5.0.3)
       nio4r (~> 2.0)
     rack (2.2.3)
-    rack-protection (2.0.8.1)
+    rack-protection (2.1.0)
       rack
     redis (4.0.1)
     ruby2_keywords (0.0.2)
-    sinatra (2.0.8.1)
+    sinatra (2.1.0)
       mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.8.1)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
       tilt (~> 2.0)
     tilt (2.0.10)
 
@@ -38,7 +38,7 @@ DEPENDENCIES
   redis
 
 RUBY VERSION
-   ruby 2.6.6p146
+   ruby 2.7.2p137
 
 BUNDLED WITH
    2.1.4
