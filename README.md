@@ -20,8 +20,8 @@ You can use it exactly as any other guillotine app:
 
 ## Setup
 
-    git clone git://github.com/mrtazz/katana.git
-    cd katana
+    git clone https://github.com/dentarg/burd.git
+    cd burd
     heroku apps:create
     heroku addons:add redistogo
     heroku domains:add sho.rt
