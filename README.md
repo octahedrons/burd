@@ -1,4 +1,4 @@
-# Katana [![Code Climate](https://codeclimate.com/github/mrtazz/katana.png)](https://codeclimate.com/github/mrtazz/katana)
+# Burd
 
 ## Overview
 Opinionated personal URL shortener which runs on [Heroku][1] and uses [Redis to
@@ -47,7 +47,7 @@ Keep in mind that this endpoint is not authenticated.
 
 [1]: http://heroku.com
 [2]: http://redistogo.com
-[3]: https://github.com/technoweenie/guillotine
+[3]: https://github.com/dentarg/guillotine
 [4]: https://twitter.com/technoweenie
 [5]: https://twitter.com/roidrage
 [6]: https://github.com/mattmatt/s3itch
