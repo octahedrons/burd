@@ -1,6 +1,8 @@
-source "https://rubygems.org"
-ruby File.read(".ruby-version").chomp
+# frozen_string_literal: true
 
-gem "guillotine", git: "https://github.com/dentarg/guillotine.git"
+source "https://rubygems.org"
+ruby File.read(".ruby-version")
+
+gem "guillotine", github: "dentarg/guillotine"
 gem "redis"
 gem "puma"
