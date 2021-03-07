@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/dentarg/guillotine.git
-  revision: ebb95bf56e25f901239cff517eaaa856a0daebb7
+  revision: 271aa86444ae863322bb4aef7f9d00c69fefb0d4
   specs:
     guillotine (1.4.2)
       addressable (~> 2.3)
