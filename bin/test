@@ -3,7 +3,7 @@
 # echo commands
 set -x
 
-RUBYOPT=-W:deprecated
+RUBYOPT=${RUBYOPT:-"-W:deprecated"}
 
 # install app dependencies
 bundle
