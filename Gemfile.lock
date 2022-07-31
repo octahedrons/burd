@@ -38,7 +38,7 @@ DEPENDENCIES
   redis
 
 RUBY VERSION
-   ruby 2.7.5p203
+   ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.6
+   2.3.19
