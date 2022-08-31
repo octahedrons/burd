@@ -11,6 +11,7 @@ GEM
   specs:
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    connection_pool (2.2.5)
     mustermann (2.0.2)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.8)
@@ -20,7 +21,10 @@ GEM
     rack (2.2.4)
     rack-protection (2.2.2)
       rack
-    redis (4.8.0)
+    redis (5.0.2)
+      redis-client (~> 0.7)
+    redis-client (0.7.1)
+      connection_pool
     ruby2_keywords (0.0.5)
     sinatra (2.2.2)
       mustermann (~> 2.0)
