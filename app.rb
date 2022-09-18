@@ -36,7 +36,9 @@ module Katana
             url  = REDIS.get(key)
 
             [code, url]
-          end.to_h
+          end
+          .to_h
+          .sort_by { |code, _url| code }
 
         html =<<~HTML
         <html>
