@@ -26,6 +26,40 @@ module Katana
         "Shorten all the URLs"
       end
 
+      get '/all' do
+        protected!
+
+        code_and_urls = REDIS
+          .scan_each(match: "guillotine:hash:*")
+          .map do |key|
+            code = key.split(":").last
+            url  = REDIS.get(key)
+
+            [code, url]
+          end.to_h
+
+        html =<<~HTML
+        <html>
+          <head>
+            <title>burd urls</title>
+          </head>
+          <body>
+            <pre>
+        #{code_and_urls.map { |code, url| "#{code} => <a href='#{url}'>#{url}</a>" }.join("\n")}
+            </pre>
+          </body>
+        </html>
+        HTML
+
+        if cli_agent?
+          headers \
+            "content-type" => "text/plain"
+          body code_and_urls.map { |code, url| "#{code} => #{url}" }.join("\n")
+        else
+          body html
+        end
+      end
+
       if ENV['TWEETBOT_API']
         # experimental (unauthenticated) API endpoint for tweetbot
         get '/api/create/?' do
@@ -42,6 +76,13 @@ module Katana
 
       # helper methods
       helpers do
+        def cli_agent?
+          agents = %w[
+            curl
+            wget
+          ]
+          agents.any? { |agent| request.user_agent.include?(agent) }
+        end
 
         # Private: helper method to protect URLs with Rack Basic Auth
         #
