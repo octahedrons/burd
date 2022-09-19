@@ -10,6 +10,7 @@ module Katana
           host: uri.host,
           port: uri.port,
           password: uri.password,
+          timeout: 30,
           reconnect_attempts: (1..10).to_a,
         }
         REDIS = Redis.new(redis_options)
