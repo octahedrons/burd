@@ -4,6 +4,7 @@ app = "burd"
   builder = "heroku/buildpacks:20"
 
 [env]
+  PRIMARY_REGION = "lhr"
   PORT = "8080"
 
 [[services]]
