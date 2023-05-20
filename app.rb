@@ -30,7 +30,7 @@ module Katana
       end
 
       get '/' do
-        "Shorten all the URLs"
+        redirect "#{request.scheme}://burd.se/ip"
       end
 
       get '/all' do
