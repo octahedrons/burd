@@ -1,37 +1,43 @@
 GIT
   remote: https://github.com/dentarg/guillotine.git
-  revision: 30cde77e8ce626b1a84e42573474d7f29a5a9e10
+  revision: 7c35014af03007f2fde17bd5924c2bd7959f47cc
   specs:
     guillotine (1.4.2)
       addressable (< 3)
-      sinatra (< 4)
+      base64 (< 999)
+      sinatra (> 1, < 5)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.8.5)
+    addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
+    base64 (0.2.0)
     connection_pool (2.4.1)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.7.0)
-    public_suffix (5.0.3)
+    public_suffix (5.0.4)
     puma (6.4.2)
       nio4r (~> 2.0)
-    rack (2.2.8)
-    rack-protection (3.1.0)
-      rack (~> 2.2, >= 2.2.4)
+    rack (3.0.8)
+    rack-protection (4.0.0)
+      base64 (>= 0.1.0)
+      rack (>= 3.0.0, < 4)
+    rack-session (2.0.0)
+      rack (>= 3.0.0)
     redis (5.0.8)
       redis-client (>= 0.17.0)
     redis-client (0.17.1)
       connection_pool
     ruby2_keywords (0.0.5)
-    sinatra (3.1.0)
+    sinatra (4.0.0)
       mustermann (~> 3.0)
-      rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.1.0)
+      rack (>= 3.0.0, < 4)
+      rack-protection (= 4.0.0)
+      rack-session (>= 2.0.0, < 3)
       tilt (~> 2.0)
-    tilt (2.2.0)
+    tilt (2.3.0)
 
 PLATFORMS
   ruby
