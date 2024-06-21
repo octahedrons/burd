@@ -1,13 +1,17 @@
 app = "burd"
 
-[build]
-  builder = "heroku/buildpacks:20"
+[processes]
+  # Dockerfile controls this
+  # https://community.fly.io/t/multiple-process-dockerfile/13639
+  web = ""
 
 [env]
   PRIMARY_REGION = "lhr"
   PORT = "8080"
+  RACK_ENV = "production"
 
 [[services]]
+  processes = ["web"]
   internal_port = 8080
   protocol = "tcp"
 
