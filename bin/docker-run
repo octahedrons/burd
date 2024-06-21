@@ -1,0 +1,17 @@
+#!/bin/bash
+
+TAG=${TAG:-burd}
+PORT=${PORT:-6000}
+
+set -e
+set -x
+
+docker run --rm \
+           --interactive \
+           --tty \
+           --env PORT=${PORT} \
+           --publish ${PORT}:${PORT} \
+           $TAG
+
+# --interactive--tty makes ^C work to stop the app
+# arg to --publish is HOST_PORT:APP_PORT
