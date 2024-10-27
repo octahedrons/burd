@@ -4,19 +4,12 @@ require 'redis'
 module Katana
     class App < Guillotine::App
       # use redis adapter with redistogo
-      if ENV["REDIS_URL"]
-        uri = URI.parse(ENV["REDIS_URL"])
-        redis_options = {
-          host: uri.host,
-          port: uri.port,
-          password: uri.password,
-          timeout: 30,
-          reconnect_attempts: (1..10).to_a,
-        }
-        REDIS = Redis.new(redis_options)
-      else
-        REDIS = Redis.new
-      end
+      redis_options = {
+        url: ENV["REDIS_URL"], # defaults to localhost when empty
+        timeout: 5,
+        reconnect_attempts: (1..5).to_a,
+      }
+      REDIS = Redis.new(redis_options)
       adapter = Guillotine::RedisAdapter.new REDIS
       set :service => Guillotine::Service.new(adapter, :strip_query => false,
                                               :strip_anchor => false)
