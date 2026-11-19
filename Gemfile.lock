@@ -52,7 +52,7 @@ DEPENDENCIES
   redis
 
 RUBY VERSION
-   ruby 3.2.5p208
+  ruby 3.4.13
 
 BUNDLED WITH
    2.5.22
